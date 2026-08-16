@@ -8,6 +8,11 @@
     "target": "esnext",
     "types": [],
 
+    // Path Mapping
+    "paths": {
+      "@/*": ["./src/*"]
+    },
+
     // Stricter Typechecking Options
     "noUncheckedIndexedAccess": true,
     "exactOptionalPropertyTypes": true,
