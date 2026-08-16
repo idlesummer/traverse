@@ -1,0 +1,40 @@
+{
+  "name": "traverse",
+  "version": "0.1.0",
+  "description": "Declarative depth-first tree traversal with pre-order and post-order hooks.",
+  "keywords": [
+    "tree",
+    "traversal",
+    "typescript",
+    "preorder",
+    "postorder"
+  ],
+  "homepage": "https://github.com/idlesummer/traverse#readme",
+  "bugs": {
+    "url": "https://github.com/idlesummer/traverse/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/idlesummer/traverse.git"
+  },
+  "license": "MIT",
+  "author": "Nash Luis Maramag",
+  "type": "module",
+  "exports": {
+    ".": "./dist/index.mjs",
+    "./package.json": "./package.json"
+  },
+  "directories": {
+    "test": "test"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsdown"
+  },
+  "devDependencies": {
+    "tsdown": "^0.22.14",
+    "typescript": "^7.0.2"
+  }
+}
