@@ -32,8 +32,10 @@
   ],
   "scripts": {
     "build": "tsdown",
+    "check": "tsc --noEmit",
     "lint": "oxlint",
-    "format": "oxfmt --write"
+    "format": "oxfmt --check",
+    "format:fix": "oxfmt --write"
   },
   "devDependencies": {
     "oxfmt": "^0.63.0",
