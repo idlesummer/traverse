@@ -1,15 +1,15 @@
 export type TraverseHooks<TNode> = {
   /** Called when visiting each node. Return true to stop traversal. */
-  visit?: (node: TNode) => true | void
+  visit?: (node: TNode) => unknown
 
   /** Returns a node's children. Return null or undefined to stop the traversal. */
   expand: (node: TNode) => TNode[] | null | undefined
 
   /** Called after traversing a node's children. Return true to stop traversal. */
-  leave?: (node: TNode) => true | void
+  leave?: (node: TNode) => unknown
 
   /** Attaches a child node to its parent */
-  attach?: (child: TNode, parent: TNode) => void
+  attach?: (child: TNode, parent: TNode) => unknown
 }
 
 /**
