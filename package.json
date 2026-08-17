@@ -37,6 +37,7 @@
     "check": "tsc --noEmit",
     "lint": "eslint src test",
     "lint:fix": "eslint src test --fix",
+    "prepublishOnly": "npm run build",
     "test": "vitest"
   },
   "devDependencies": {
