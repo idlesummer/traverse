@@ -10,15 +10,16 @@
     "postorder"
   ],
   "homepage": "https://github.com/idlesummer/traverse#readme",
-  "bugs": {
-    "url": "https://github.com/idlesummer/traverse/issues"
-  },
+  "bugs": "https://github.com/idlesummer/traverse/issues",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/idlesummer/traverse.git"
   },
   "license": "MIT",
-  "author": "Nash Luis Maramag",
+  "author": "idlesummer (https://github.com/idlesummer)",
+  "contributors": [
+    "lettertoelias (https://github.com/lettertoelias)"
+  ],
   "type": "module",
   "exports": {
     ".": "./dist/index.mjs",
