@@ -2,7 +2,7 @@
 Declarative depth-first tree traversal with pre-order and post-order hooks.
 
 ## Background
-Kept writing the same tree traversal algorithm by hand every time my projects needed to walk a tree. So I made a simple declarative helper for pre-order and post-order depth-first search: you pass in behavior instead of rewriting the entire algorithm.
+Kept writing the same tree traversal algorithm by hand every time my projects needed to walk a tree. So I made a simple declarative helper for pre-order and post-order depth-first search where behavior is passed instead of needing to rewrite the algorithm.
 
 ## Install
 ```
