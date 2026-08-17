@@ -1,6 +1,6 @@
 {
   "name": "@idlesummer/traverse",
-  "version": "0.1.2",
+  "version": "0.1.1",
   "description": "Declarative depth-first tree traversal with pre-order and post-order hooks.",
   "keywords": [
     "tree",
