@@ -33,6 +33,7 @@
   "scripts": {
     "build": "tsdown",
     "check": "tsc --noEmit",
+    "lint": "eslint",
     "test": "vitest"
   },
   "devDependencies": {
