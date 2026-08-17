@@ -32,10 +32,11 @@
     "dist"
   ],
   "scripts": {
+    "bench": "vitest bench",
     "build": "tsdown",
     "check": "tsc --noEmit",
-    "lint": "eslint",
-    "lint:fix": "eslint --fix",
+    "lint": "eslint src test",
+    "lint:fix": "eslint src test --fix",
     "test": "vitest"
   },
   "devDependencies": {
