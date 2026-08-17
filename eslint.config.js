@@ -14,6 +14,7 @@ export default defineConfig([
     },
   },
   tseslint.configs.recommended,
+  { ignores: ['dist/**'] },
   {
     plugins: { '@stylistic': stylistic },
     rules: {
