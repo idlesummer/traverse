@@ -10,11 +10,12 @@ describe('traverse', () => {
   describe('ordering', () => {
     it('visits nodes in pre-order', () => {
       /*
-       * pre-order: a → b → c → d
-       * a
-       * ├─ b
-       * └─ c
-       *    └─ d
+      * a
+      * ├─ b
+      * └─ c
+      *    └─ d
+      *
+      * pre-order: a → b → c → d
        */
       const tree: Node = { name: 'a', children: [{ name: 'b' }, { name: 'c', children: [{ name: 'd' }] }] }
       const order: string[] = []
@@ -28,10 +29,11 @@ describe('traverse', () => {
 
     it('calls leave in post-order, after a node\'s children', () => {
       /*
-       * post-order (leave): b → c → a
-       * a
-       * ├─ b
-       * └─ c
+      * a
+      * ├─ b
+      * └─ c
+      *
+      * post-order (leave): b → c → a
        */
       const tree: Node = { name: 'a', children: [{ name: 'b' }, { name: 'c' }] }
       const order: string[] = []
@@ -58,10 +60,11 @@ describe('traverse', () => {
   describe('early stopping', () => {
     it('stops traversal when visit returns true', () => {
       /*
-       * visited: a → b
-       * a
-       * ├─ b   ← visit(b) returns true, stop
-       * └─ c   (never reached)
+      * a
+      * ├─ b   ← visit(b) returns true, stop
+      * └─ c   (never reached)
+      *
+      * visited: a → b
        */
       const tree: Node = { name: 'a', children: [{ name: 'b' }, { name: 'c' }] }
       const visited: string[] = []
@@ -75,10 +78,11 @@ describe('traverse', () => {
 
     it('does not run pending leave hooks after stopping early', () => {
       /*
-       * leave calls: (none)
-       * a
-       * ├─ b   ← stop here; a's pending leave never fires
-       * └─ c
+      * a
+      * ├─ b   ← stop here; a's pending leave never fires
+      * └─ c
+      *
+      * leave calls: (none)
        */
       const tree: Node = { name: 'a', children: [{ name: 'b' }, { name: 'c' }] }
       const left: string[] = []
@@ -93,10 +97,11 @@ describe('traverse', () => {
 
     it('stops the entire traversal, not just the current subtree, when expand returns undefined', () => {
       /*
-       * visited: a → b
-       * a
-       * ├─ b   ← expand(b) is undefined: halts the whole traversal
-       * └─ c   (still queued, but never reached)
+      * a
+      * ├─ b   ← expand(b) is undefined: halts the whole traversal
+      * └─ c   (still queued, but never reached)
+      *
+      * visited: a → b
        */
       const tree: Node = { name: 'a', children: [{ name: 'b' }, { name: 'c' }] }
       const visited: string[] = []
@@ -112,10 +117,11 @@ describe('traverse', () => {
   describe('attach', () => {
     it('calls attach for each child as it is pushed (reverse of expand order), before descending into it', () => {
       /*
-       * attach order: a→c, a→b  (reverse of expand's [b, c])
-       * a
-       * ├─ b
-       * └─ c
+      * a
+      * ├─ b
+      * └─ c
+      *
+      * attach order: a→c, a→b  (reverse of expand's [b, c])
        */
       const tree: Node = { name: 'a', children: [{ name: 'b' }, { name: 'c' }] }
       const attachments: string[] = []
@@ -131,8 +137,9 @@ describe('traverse', () => {
   describe('edge cases', () => {
     it('handles a single node with no children', () => {
       /*
-       * visited: a
-       * a   (no children)
+      * a   (no children)
+      *
+      * visited: a
        */
       const tree: Node = { name: 'a' }
       const order: string[] = []
@@ -146,8 +153,9 @@ describe('traverse', () => {
 
     it('traverses deep chains iteratively, without a call-stack overflow', () => {
       /*
-       * visited: all 100,000 nodes, no stack overflow
        * 0 → 1 → 2 → … → 99999   (100,000-node chain)
+       *
+       * visited: all 100,000 nodes, no stack overflow
        */
       type Chain = {
         depth: number,
