@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { traverse } from '@/traverse.js'
+import { traverse } from '@/traverse'
 
 type Node = {
   name: string,

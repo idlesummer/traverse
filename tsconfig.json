@@ -15,7 +15,6 @@
 
     // Stricter Typechecking Options
     "noUncheckedIndexedAccess": true,
-    "exactOptionalPropertyTypes": true,
 
     // Recommended Options
     "strict": true,
@@ -28,7 +27,4 @@
     // Build handled by tsdown
     "noEmit": true
   },
-
-  "include": ["src", "test", "*.config.*"],
-  "exclude": ["node_modules", "dist"]
 }

@@ -25,20 +25,17 @@
     ".": "./dist/index.mjs",
     "./package.json": "./package.json"
   },
-  "directories": {
-    "test": "test"
-  },
   "files": [
     "dist"
   ],
   "scripts": {
     "bench": "vitest bench",
     "build": "tsdown",
-    "check": "tsc --noEmit",
     "lint": "eslint src test",
     "lint:fix": "eslint src test --fix",
     "prepublishOnly": "npm run build",
-    "test": "vitest"
+    "test": "vitest",
+    "typecheck": "tsc --noEmit"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
