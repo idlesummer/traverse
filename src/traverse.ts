@@ -19,6 +19,9 @@ export type TraverseHooks<TNode> = {
  * - Children are traversed in the order returned by expand.
  * - Stopping does not run pending `leave` hooks.
  *
+ * @param root - The node to start traversing from.
+ * @param hooks - Callbacks controlling traversal; see {@link TraverseHooks}.
+ *
  * @example
  * Build a tree and mark each completed subtree:
  *
